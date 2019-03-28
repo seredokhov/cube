@@ -1,0 +1,93 @@
+/*============================================ 
+	Основные стили
+============================================*/
+body{
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.5;
+	color: #222;
+	overflow: hidden;
+	background: #000;
+}
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+.wrapper {
+	perspective: 900px;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+
+}
+.cube {
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+	transform-origin: 50% 50% -50vh;
+	transition: all .4s ease;
+	transition-duration: 0.4s;
+	transform: rotateX(0deg);
+}
+.side {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: inherit;
+	height: inherit;
+	text-align: center;
+	line-height: 300px;
+	font-size: 30px;
+
+}
+
+.front {
+	background: #e9bb87;
+	opacity: 1;
+	transform: translate3d(0px, 0px, 0px);
+}
+.back {
+	color: #fff;
+	background: #2f1407;
+	opacity: 0.9;
+	transform: rotateY(180deg) rotateZ(180deg) translate3d(0,0,100vh);
+}
+.right {
+	background: #794320;
+	opacity: 0.9;
+	transform: rotateY(90deg) translate3d(50%,0, 50vw);
+}
+.left {
+	background: #fd5e79;
+	opacity: 0.9;
+	transform: rotateY(-90deg) translate3d(-50%, 0, 50vw);
+}
+.top {
+	background: #095729;
+	opacity: 0.9;
+	transform: rotateX(90deg) translate3d(0, -50%, 50vh);
+}
+.bottom {
+	background: #d95e21;
+	opacity: 1;
+	transform: rotateX(-90deg) translate3d(0, 50%, 50vh);
+}
+
+.dots {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 100;
+}
+
+.dots a {
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: red;
+	margin: 5px;
+}
